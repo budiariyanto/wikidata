@@ -1,0 +1,44 @@
+---
+title: Tutorial Linux Hibernate / Sleep Laptop
+categories: linux
+...
+
+This tutorial intended for [ArchLinux](http://www.archlinux.org), but hopefully useful to other linux distros. :)
+
+Most of linux distros don't have out of the box hibernate or sleep on laptop. Hibernate is suspending state to harddisk and sleep is suspending state to RAM. In order to enable hibernate and sleep mode, follow this instruction:
+
+## Install pm-utils
+Pm-utils is a tools for hibernating or sleeping your laptop. On Arch Linux, you can download it from pacman repository by issuing this command:
+
+```bash
+$ sudo pacman -S pm-utils
+```
+
+## Install acpid and acpi
+Acpid is acpi daemon for listening the acpi_call command for suspending laptops. Acpi is tools for sending command to kernel to execute acpi_call for suspeding laptops. To install this packages, issue pacman command:
+
+```bash
+$ sudo pacman -S acpid acpi 
+```
+
+## Setup Hibernate Configuration
+To enable hibernate mode, you should hacking your kernel configuration and modifiy grub.
+1. Modify ```/etc/boot/grub/menu.lst```, in the kernel section, change the line so that line look like this:
+     ```kernel /boot/vmlinuz-linux root=/dev/sda1 resume=/dev/sda2 ro```
+     ```/dev/sda2``` is the swap partition. You should set your appropriate swap partition.
+1. Modify the ```HOOKS``` parameter in the ```/etc/mkinitcpio.conf```, add resume so the ```HOOKS``` parameters look like this:
+     ```HOOKS="base udev autodetect pata scsi sata resume filesystems usbinput fsck"```
+     The resume value position must after pata scsi sata and before filesystems. After that, update the kernel image by issuing this command as root:
+     ```mkinitcpio -p linux```
+1. Copy pm configuration from ```/usr/lib/pm-utils/defaults``` to ```/etc/pm/config.d/```. You should name it modules
+1. Configure the configuration file:
+     ```HIBERNATE_MODE="shutdown"```
+     This configration makes laptop to shutdown after successfully hibernating.
+
+## Preventing Laptop Hang On Sleep
+Some laptops can be hang after sleep operation. It causes by some kernel module. This kernel module should be turned off before sleep opreation executed. The suspected modules are ```ehci_hcd, button and rfkill```. Check this modules are loaded or not by issuing ```lsmod``` command and see the output. Add these modules to the ```/etc/pm/config.d/modules``` on the ```SUSPEND_MODULES``` section:
+
+```SUSPEND_MODULES="ehci_hcd"```
+
+## Before Try Suspeding laptop
+Restart your laptops and enjoy! :)
