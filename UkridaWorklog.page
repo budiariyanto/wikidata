@@ -13,32 +13,48 @@ Worklog tahun 2014
 - Bugfix form edit dan delete soal
 
 ### 23
-- bug fix filter tinjauan 4 pada form edit dan delete soal
-- bug fix filter tombol edit dan delete pada form edit dan delete soal ketika tidak ada data
+- Bug fix filter tinjauan 4 pada form edit dan delete soal
+- Bug fix filter tombol edit dan delete pada form edit dan delete soal ketika tidak ada data
 - Tambah utility text transfer
 - Membuat custom popup menu
 - Membuat utility untuk meregisterkan popup menu action ke dalam setiap text component
 
 ### 24
-- benerin layout form soal add
-- benerin copy paste popupmenu widget supaya paste tidak menimpa yang lama tapi concatenate dulu dengan yang lama
-- benerin layout form soal add
-- benerincopy paste popupmenu widget supaya paste tidak menimpa yang lama tapi concenate dulu dengan yang lama
-- make program launcher autodetect system type
-- membuat kunci jawaban harus diisi
-- membuat departemen menjadi combobox
-- tambah select all pada export data soal dan export data soal for web
-- get all matapelajaran disort descending
-- menambah filter wajib buku ujian pada export data soal for web
-- nama file export data soal for web berformat <bukuujian_jumlahsoal>
+- Benerin layout form soal add
+- Benerin copy paste popupmenu widget supaya paste tidak menimpa yang lama tapi concatenate dulu dengan yang lama
+- Benerin layout form soal add
+- Benerincopy paste popupmenu widget supaya paste tidak menimpa yang lama tapi concenate dulu dengan yang lama
+- Make program launcher autodetect system type
+- Membuat kunci jawaban harus diisi
+- Membuat departemen menjadi combobox
+- Tambah select all pada export data soal dan export data soal for web
+- Get all matapelajaran disort descending
+- Menambah filter wajib buku ujian pada export data soal for web
+- Nama file export data soal for web berformat <bukuujian_jumlahsoal>
 
 ## Juli
 ### 1
-- bugfix preview soal. Pilihan A kalau kepanjangan tulisannya kepotong
-- update data matalkuliah dan user pada database
-- bugfix form soal update dan delete supaya pada saat init valuesnya masuk ke dalam object sehingga terload dengan benar
-- textbox username didisable pada form ganti password
-- edit separator pada form import data supaya menggunakan ";" bukan ","
+- Bugfix preview soal. Pilihan A kalau kepanjangan tulisannya kepotong
+- Update data matalkuliah dan user pada database
+- Bugfix form soal update dan delete supaya pada saat init valuesnya masuk ke dalam object sehingga terload dengan benar
+- Textbox username didisable pada form ganti password
+- Edit separator pada form import data supaya menggunakan ";" bukan ","
+
+### 17
+- Make program launcher autodetect system type
+- Membuat kunci jawaban harus diisi
+- Membuat departemen menjadi combobox
+- Tambah select all pada export data soal dan export data soal for web
+- Get all matapelajaran disort descending
+- Menambah filter wajib buku ujian pada export data soal for web
+- Nama file export data soal for web berformat <bukuujian_jumlahsoal>
+
+### 18
+- Bugfix popup menu copy dan paste
+- Menambah menu cut pada popup menu
+- Mengubah filename hasil export data soal untuk web menjadi <bukuujian_jumlahsoal>
+- Mengubah messagebox sukses export soal menjadi lebih informatif
+- Menyesuaikan menu untuk dosen
 
 ### 23
 - Add server time servlet
@@ -59,6 +75,16 @@ Worklog tahun 2014
 - Add help pada student ujian page
 - Add menu help pada menu student
 - Waktu habis otomatis redirect ke login page dalam waktu 7 detik
+- Update pom.xml supaya include glazed list untuk combobox autocomplete
+- Membuat pilih buku ujian autocomplete
+- Fix form add soal button hapus menyala saat add gambar pilihan A yang pertama
+- Remove import class yang tidak perlu pada form soal export data for web
+- Update pom.xml supaya include glazed list untuk combobox autocomplete
+- Membuat pilih buku ujian autocomplete
+- Fix form add soal button hapus menyala saat add gambar pilihan A yang pertama
+- Remove import class yang tidak perlu pada form soal export data for web
+- Merge branch 'master' into dosen
+- Membuat direktori  db_backup untuk menaruh backup database
 
 ## Agustus
 ### 12
