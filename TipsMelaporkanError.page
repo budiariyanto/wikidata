@@ -1,0 +1,60 @@
+---
+title: Tips Melaporkan Error
+categories: tips
+...
+
+Menggunakan aplikasi atau software, sudah menjadi kebiasaan kita sehari-hari. Kita menggunakannya karena aplikasi tersebut dapat mempermudah pekerjaan yang kita lakukan. Namun, sebagus apapun aplikasi, masih terdapat kemungkinan adanya bug. Bug adalah kesalahan pada kode program yang menyebabkan program menjadi error, sehingga jalannya program tidak seperti yang seharusnya. Developer(tim programmer, pembangun aplikasi) bertugas memperbaiki program tersebut, namun bug bisa jadi berjumlah sangat banyak sehingga ada yang belum diketahui developer. Untuk membantu melaporkan bug kepada developer, tentunya kita harus bisa menyampaikannya dengan jelas supaya developer dapat memperbaiki aplikasi tersebut dengan benar juga dan laporan kita tidak membingungkan. Berikut ini saya akan memberikan tips bagaimana cara pelaporan bug/error yang salah dan benar:
+
+## Beritahukan dengan detail apa yang ingin Anda lakukan
+**Salah**
+
+Kesalahan yang sering terjadi pada saat memberitahukan error adalah kita tidak memberitahukannya dengan detail. Misalnya seperti ini: “Eh, programnya error nih.. gimana nih?”, “Mas, kok saya mau nyimpan file tulisannya error gitu?”. Jika kita memberitahukan dengan cara seperti ini, developer akan bingung karena aplikasi terdiri dari banyak bagian sehingga developer menjadi tidak tahu sebetulnya kesalahan ada di bagian mana dan developer tidak dapat membantu kita karena tidak jelas juga sebenarnya apa tujuan yang ingin kita lakukan.
+
+**Benar**
+
+Kita dapat melaporkannya dengan cara yang lebih jelas, misalnya seperti ini:
+“Pak, saya ingin melakukan penambahan dan penyimpanan data karyawan. Saya sudah masuk ke menu master data karyawan, tetapi ketika menyimpan terjadi error.”. Dengan cara pelaporan seperti ini, developer sudah langsung mengetahui bahwa masalah yang dihadapi adalah kita ingin menambah dan menyimpan data karyawan tetapi ketika menyimpan tidak bisa. Jadi, developer tidak akan mencari bug pada bagian lain pada aplikasi yang memang tidak salah.
+
+## Beritahukan langkah untuk mereproduksi error tersebut kepada developer
+**Salah**
+
+Setelah memberitahukan apa yang ingin kita lakukan, beritahukan juga bagaimana sampai bisa terjadi error. Biasanya kita menyampaikannya dengan cara yang salah sehingga terjadi percakapan seperti ini:
+U(User), D(Developer) 
+U: “Saya mau nyimpan data tapi nggak bisa.”
+D: “Langkah apa saja tadi yang dilakukan?”
+U: “Nggak tau deh.. pokoknya error.”
+D: “Ya sudah, bentar ya saya coba....... Bisa tuh..”
+U: “Hah? Di sini kok nggak bisa?”
+D: “Bisa”
+U: “Nggak bisa”
+D: “Bisa”
+U: “Nggak bisa”
+D: “Bisa”
+U: “Nggak bisa”
+D: “Bisa”
+U: “Nggak bisa”
+......... dan seterusnya
+Dengan begitu, masalah tidak selesai tapi malah bertambah karena kita berkelahi dengan developer.
+
+**Benar**
+
+Alangkah lebih baik kalau kita menyampaikannya seperti ini:
+U: “Saya mau nyimpan data tapi nggak bisa.”
+D: “Langkah apa saja tadi yang dilakukan?”
+U: “Saya masuk ke menu data master karyawan, lalu saya ingin mengisi data nama, alamat, tanggal lahir. Tanggal lahir saya isi dengan format tanggal-bulan-tahun, lalu saya simpan.”
+D: “Oohh.. begini Bu, tanggal di sistem itu formatnya bulan-tanggal-tahun. Menjadi salah mungkin karena bulan yang Ibu isikan lebih dari 12.”
+U: “Oke. Saya coba ya....... Ok sudah bisa. Makasih ya Mas.”
+D: “Sama-sama Bu.”
+Dengan demikian, masalah bisa selesai. Sebagai tambahan, jika permasalahan tidak dapat diselesaikan dengan percakapan saja, cobalah memberitahukan pesan error pada aplikasi dan mengirim gambar aplikasi pada saat error.
+
+## Beritahukan harapan Anda mengenai bagaimana seharusnya program itu berjalan
+**Salah**
+
+Setelah masalah selesai, tentunya kita tidak ingin lagi terjadi kesalahan yang sama di kemudian hari. Nah, sampaikanlah juga apa yang menjadi keinginan kita terhadap aplikasi yang kita gunakan. Kesalahan yang sering kita lakukan adalah diam saja setelah masalah selesai.
+
+**Benar**
+
+Seharusnya setalah masalah selesai kita bisa menyampaikan harapan kita terhadap aplikasi tersebut. Sederhana saja, misalnya kita sampaikan: “Mas, itu tanggalnya tolong diganti formatnya ya, kan lebih enak kalau formatnya sesuai dengan tanggal di Indonesia. Jadi nggak bingung.”. Jika kita sudah menyampaikan harapan kita, developer pasti berusaha membantu kita jika memang mungkin dilakukan.
+
+### Catatan Penting
+Programmer bukan Mama Lauren(R.I.P) atau Baby Djenar atau Ki Joko Bodo, sehingga mereka tidak bisa mengerti apa yang Anda pikirkan. Maka, Anda sebagai user harus menjelaskan dengan jelas apa yang Anda tanyakan kepada programmer.
