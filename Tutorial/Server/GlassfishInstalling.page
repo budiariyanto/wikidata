@@ -1,0 +1,22 @@
+--
+title: Installing Glassfish
+categories: server glassfish
+--
+
+## Download Glassfish
+Download glassfish di [sini](https://glassfish.java.net/download.html). Unzip pada direktori yang Anda mau. Selesai.
+
+## Starting Glassfish
+Masuk ke direktori bin pada root direktori glassfish, jalankan perintah
+
+```bash
+$ ./asadmin start-domain
+```
+
+Buka administration console pada browser di alamat [https://localhost:4848](https://localhost:4848).
+
+## Enabling Glassfish Domain Administration Server(DAS)
+Supaya bisa login administration console pada glassfish dari remote computer, DAS harus diaktifkan dulu. Caranya:
+
+1. Ganti default admi password dengan perintah ./asadmin change-admin-password
+1. Jalankan perintah ./asadmin enable-secure-admin
