@@ -1,0 +1,91 @@
+---
+title: Memasang Sertifikat SSL Ke Dalam Glassfish
+...
+
+## Summary
+Kita akan memasang sertifikat SSL untuk glassfish
+
+## Versi Glassfish Yang Digunakan
+Tutorial ini menggunakan glassfish versi 3.1.2.2.
+Glassfish bisa didownload di [sini](http://glassfish.java.net/downloads/3.1.2.2-final.html).
+Belum dicoba untuk glassfish versi 4 dan selanjutnya. Ekspektasinya hasil akan sama.
+
+## SSL Certificate
+SSL Certificate adalah sertifikat sebagai identitas server kita ketika server kita melayani komunikasi data menggunakan protokol https. Sertifikatnya misalkan dibeli dari [kuncihost](http://kuncihost.com/). Karena kita sudah membeli SSL certificate, maka kita mempunyai account di sana misalkan:
+
+```
+Username: admin@thewhitepal.com
+Password: 12345678
+```
+
+SSL Certificate yang kita beli misalkan adalah SSL Certificate basic dari Comodo, yang dinamakan PositiveSSL Certificate.
+
+## Cara mendapatkan SSL Certificate
+### Generate private key
+Sebelum memulai mengenerate private key, kita harus mengubah master password glassfish.
+Caranya dengan mengetikkan perintah sebagai berikut:
+
+```bash
+$ cd /path/to/glassfish/bin
+$ ./asadmin change-master-password domain1
+```
+
+Setelah itu Anda akan diprompt current password, yang mana adalah ```changeit```, lalu Anda akan disuruh
+menginputkan new password dan konfirmasi new password.
+
+Sebagai catatan, master password berbeda dengan admin password.
+
+Menggenerate private key bisa dilakukan dengan perintah:
+
+```bash
+$ keytool -keysize 2048 -genkey -alias <nama_domain> -keyalg RSA -keystore keystore.jks
+```
+
+Nanti identitas kita akan ditanyakan. Yang paling penting di sini adalah mengisi First Name and Last Name harus diisi dengan nama domain yang akan digunakan. Misalkan: ```blog.thewhitepal.com```.
+
+Setelah digenerate, maka keystore akan berisi private key yang baru digenerate. Private key ini menunggu pasangannya, yaitu public key untuk dimasukkan. Hal ini biasa kita sebut pairing.
+
+Sewaktu ditanya password untuk key ini, isilah sama dengan master password. Ini suatu keharusan.
+
+### Generate Certificate Signing Request(CSR)
+Private key sudah dibuat, maka saatnya kita merequest certificate ke Comodo. Untuk merequestnya, kita membutuhkan CSR. CSR dapat digenerate menggunakan perintah:
+
+```bash
+$ keytool -certreq -alias <nama_domain> -keystore keystore.jks -file <nama_domain>.csr
+```
+
+CSR berisi encrypted message. Message inilah yang nanti akan kita upload lewat kuncihost ketika merequest sertifikat ke Comodo.
+
+### Email untuk berkomunikasi dengan Comodo
+Setelah submit CSR, email kita akan diminta untuk berkomunikasi dengan Comodo. Jadi kita harus membuat 1 account email, misalkan webmaster@thewhitepal.com. Setelah kita memberitahu email kita, tinggal menunggu saja mereka mengirimkan file sertifikat sslnya ke alamat email kita.
+
+### Comodo PositiveSSL Certificate
+Saat yang ditunggu-tunggu sudah datang. Comodo sudah mengirim sertifikat yang sudah kita request. Filenya dalam format zip berisi 3 file.
+1. AddTrustExternalCARoot.crt --> Root certificate
+2. PositiveSSLCA2.crt --> Intermediate certificate
+3. domain.crt --> Domain certificate
+
+Ketiga file ini harus kita tambahkan ke private key yang sudah kita generate tadi secara berurutan, sesuai urutan di atas. Cara menambahkannya dengan perintah:
+
+```bash
+$ keytool -import -alias root -keystore keystore.jks -trustcacerts -file AddTrustExternalCARoot.crt
+```
+
+Perintah di atas untuk menambahkan root certificate. Jika sudah ada, pilih no. Jangan dioverwrite.
+
+```bash
+$ keytool -import -alias intermediate -keystore keystore.jks -trustcacerts -file PositiveSSLCA2.crt
+$ keytool -import -alias <nama_domain> -keystore keystore.jks -trustcacerts -file domain.crt
+```
+
+Jika benar, perintah pertama(jika root certificate belum ada), dan kedua akan memberikan feedback: Certificate was added to keystore. Perintah ketiga akan memberi feedback: Certificate reply was installed in keystore, yang menandakan private dan public key sudah terpairing dengan benar. Dengan ini, kita bisa bilang bahwa domain.crt adalah public key dari private key yang kita buat di awal.
+
+## Cara Memasang SSL Certificate di Glassfish
+Pada administration web interface glassfish, pilih Configuration -> Network Config -> Network Listeners -> http-listener-2. Pilih tab SSL, lalu isi Certificate NickName dengan <nama_domain> dan keystore dengan keystore.jks. Selesai. Https sudah bisa dipakai dan tersertifikasi.
+
+## Tambahan
+Untuk melihat key yang ada di dalam keystore, bisa menggunakan perintah:
+
+```bash
+$ keytool -list -keystore keystore
+```
