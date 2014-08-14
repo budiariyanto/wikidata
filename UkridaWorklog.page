@@ -4,13 +4,64 @@ categories: kerjaan
 ...
 
 # 2014
+Worklog tahun 2014
+
+## Juni
+### 19
+- Membetulkan data tinjauan yang salah. Seharusnya data tinjauan 1 tidak sam
+- Membuat text supaya wrapnya enable word boundary
+- Bugfix form edit dan delete soal
+
+### 23
+- bug fix filter tinjauan 4 pada form edit dan delete soal
+- bug fix filter tombol edit dan delete pada form edit dan delete soal ketika tidak ada data
+- Tambah utility text transfer
+- Membuat custom popup menu
+- Membuat utility untuk meregisterkan popup menu action ke dalam setiap text component
+
+### 24
+- benerin layout form soal add
+- benerin copy paste popupmenu widget supaya paste tidak menimpa yang lama tapi concatenate dulu dengan yang lama
+- benerin layout form soal add
+- benerincopy paste popupmenu widget supaya paste tidak menimpa yang lama tapi concenate dulu dengan yang lama
+- make program launcher autodetect system type
+- membuat kunci jawaban harus diisi
+- membuat departemen menjadi combobox
+- tambah select all pada export data soal dan export data soal for web
+- get all matapelajaran disort descending
+- menambah filter wajib buku ujian pada export data soal for web
+- nama file export data soal for web berformat <bukuujian_jumlahsoal>
 
 ## Juli
-----
-sdf
+### 1
+- bugfix preview soal. Pilihan A kalau kepanjangan tulisannya kepotong
+- update data matalkuliah dan user pada database
+- bugfix form soal update dan delete supaya pada saat init valuesnya masuk ke dalam object sehingga terload dengan benar
+- textbox username didisable pada form ganti password
+- edit separator pada form import data supaya menggunakan ";" bukan ","
 
-## 13 Agustus 2014
+### 23
+- Add server time servlet
+- Tambah timer pada login / index page
+- Tambah auto redirect ke halaman waktu habis pada saat countdown habis
+- Modify MyDigitClock.js supaya bisa terima input jam mulai
 
+### 24
+- Add session destroyer to support automatic session destroy
+- Fix hitungan prosentase pada analisis soal ujian
+- Add javascript navigation keyboard button to halaman ujian
+- Add redirect to index page on waktuHabis.jsp
+- Block access kalau ujian belum mulai + ada error message
+- Bug fix ExamTimer kalau sisa waktu dibawah  0
 
-## 14 Agustus 2014
+### 30
+- Fix session destroyer
+- Add help pada student ujian page
+- Add menu help pada menu student
+- Waktu habis otomatis redirect ke login page dalam waktu 7 detik
+
+## Agustus
+### 12
+- Menambah tooltip dan popover pada page yang diperuntukkan bagi mahasiswa
+### 14
 - Merapikan dokumentasi
