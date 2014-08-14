@@ -19,32 +19,36 @@ Kita dapat melaporkannya dengan cara yang lebih jelas, misalnya seperti ini:
 **Salah**
 
 Setelah memberitahukan apa yang ingin kita lakukan, beritahukan juga bagaimana sampai bisa terjadi error. Biasanya kita menyampaikannya dengan cara yang salah sehingga terjadi percakapan seperti ini:
-U(User), D(Developer) 
-U: “Saya mau nyimpan data tapi nggak bisa.”
-D: “Langkah apa saja tadi yang dilakukan?”
-U: “Nggak tau deh.. pokoknya error.”
-D: “Ya sudah, bentar ya saya coba....... Bisa tuh..”
-U: “Hah? Di sini kok nggak bisa?”
-D: “Bisa”
-U: “Nggak bisa”
-D: “Bisa”
-U: “Nggak bisa”
-D: “Bisa”
-U: “Nggak bisa”
-D: “Bisa”
-U: “Nggak bisa”
+
+U(User), D(Developer)  
+U: “Saya mau nyimpan data tapi nggak bisa.”  
+D: “Langkah apa saja tadi yang dilakukan?”  
+U: “Nggak tau deh.. pokoknya error.”  
+D: “Ya sudah, bentar ya saya coba....... Bisa tuh..”  
+U: “Hah? Di sini kok nggak bisa?”  
+D: “Bisa”  
+U: “Nggak bisa”  
+D: “Bisa”  
+U: “Nggak bisa”  
+D: “Bisa”  
+U: “Nggak bisa”  
+D: “Bisa”  
+U: “Nggak bisa”  
 ......... dan seterusnya
+
 Dengan begitu, masalah tidak selesai tapi malah bertambah karena kita berkelahi dengan developer.
 
 **Benar**
 
 Alangkah lebih baik kalau kita menyampaikannya seperti ini:
-U: “Saya mau nyimpan data tapi nggak bisa.”
-D: “Langkah apa saja tadi yang dilakukan?”
-U: “Saya masuk ke menu data master karyawan, lalu saya ingin mengisi data nama, alamat, tanggal lahir. Tanggal lahir saya isi dengan format tanggal-bulan-tahun, lalu saya simpan.”
-D: “Oohh.. begini Bu, tanggal di sistem itu formatnya bulan-tanggal-tahun. Menjadi salah mungkin karena bulan yang Ibu isikan lebih dari 12.”
-U: “Oke. Saya coba ya....... Ok sudah bisa. Makasih ya Mas.”
+
+U: “Saya mau nyimpan data tapi nggak bisa.”  
+D: “Langkah apa saja tadi yang dilakukan?”  
+U: “Saya masuk ke menu data master karyawan, lalu saya ingin mengisi data nama, alamat, tanggal lahir. Tanggal lahir saya isi dengan format tanggal-bulan-tahun, lalu saya simpan.”  
+D: “Oohh.. begini Bu, tanggal di sistem itu formatnya bulan-tanggal-tahun. Menjadi salah mungkin karena bulan yang Ibu isikan lebih dari 12.”  
+U: “Oke. Saya coba ya....... Ok sudah bisa. Makasih ya Mas.”  
 D: “Sama-sama Bu.”
+
 Dengan demikian, masalah bisa selesai. Sebagai tambahan, jika permasalahan tidak dapat diselesaikan dengan percakapan saja, cobalah memberitahukan pesan error pada aplikasi dan mengirim gambar aplikasi pada saat error.
 
 ## Beritahukan harapan Anda mengenai bagaimana seharusnya program itu berjalan
