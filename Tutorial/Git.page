@@ -169,6 +169,15 @@ Untuk undo commit(belum push), jalankan perintah:
 $ git reset HEAD~1
 ```
 
+## Membatalkan Semua Perubahan Ke Commit Terakhir
+Kadang-kadang kita sudah ubah-ubah, lalu jadi berantakan, lalu kita mau kembalikan file-file seperti semula seperti pada commit terakhir yang kita lakukan. Untuk melakukan ini jalankan perintah:
+
+```bash
+$ git reset --hard
+```
+
+```Hard``` berarti tidak hanya mengembalikan index, tetapi juga file-file fisik yang ada dikembalikan seperti semula
+
 ## Pushing Files
 Untuk push file ke remote repository, jalankan perintah:
 ```bash
