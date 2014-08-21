@@ -1,0 +1,27 @@
+---
+title: Tutorial PostgreSQL
+categories: database
+...
+
+## Apa itu PostgreSQL
+PostgreSQL adalah open source relational database management system(RDBMS). PostgreSQL ini menjadi rival utama MySQL. Menurut saya, postgreSQL ini sangat bagus karena selain kaya fitur, postgreSQL sudah proven untuk production dan dokumentasinya sangat lengkap.
+
+## Download PostgreSQL
+PostgreSQL dapat didownload di [http://www.postgresql.org/download/](http://www.postgresql.org/download/)
+
+## Installing PostgreSQL
+Untuk distro linux debian based, gunakan perintah:
+
+```bash
+$ sudo apt-get install postgresql postgresql-contrib
+```
+
+## Dump Database
+
+
+## Restore Database
+Untuk merestore database, gunakan perintah:
+
+```bash
+$ psql dbname < infile.sql
+```
