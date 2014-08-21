@@ -12,25 +12,32 @@ MySQL binary file dapat didownload di [http://dev.mysql.com/downloads/mysql/](ht
 ## Installing MySQL
 MySQL biasanya sudah include dalam repository distro linux yang Anda gunakan. Untuk debian based linux, gunakan perintah:
 
-```sh
+```bash
 $ sudo apt-get install mysql-server
 ```
 
 ## Dump Database
 MySQL dapat melakukan dump dengan perintah:
 
-```sh
+```bash
 $ mysqldump -uroot -p [nama_db_yang_mau_dibackup] > outputfile.sql
 ```
 
 Dump pada MySQL dapat dibuat supaya compatible dengan RDBMS lain, PostgreSQL misalnya, dengan menambahkan parameter ```--compatible``` pada perintah dumpnya.
-```sh
+
+```bash
 $ mysqldump -uroot -p --compatible=postgresql [nama_db_yang_mau_dibackup] > outputfile.sql
 ```
 
 ## Restore Database
 Restore database dapat dilakukan dengan menggunakan perintah:
 
-```sh
+```bash
 $ mysql -uroot -p [nama_db_yang_mau_dibackup] < file.sql
 ```
+
+## Alternatif MySQL
+Sejak MySQL diakuisisi oleh Oracle pada tahun 2010, semakin hari saya pribadi menjadi tidak tenang menggunakan MySQL ini karena sewaktu-waktu lisensinya bisa diubah sehingga tidak sejalan dengan semangat open source. Maka dari itu pilihan lain dari MySQL adalah:
+
+* [MariaDB](https://mariadb.org/) - Klaimnya adalah drop-in replacement for MySQL, tapi saya sendiri masih kurang yakin
+* [PostgreSQL](http://www.postgresql.org/) - Pilihan tepat menurut saya jika tidak ingin menggunakan MySQL
