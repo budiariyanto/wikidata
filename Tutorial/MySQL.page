@@ -1,0 +1,36 @@
+---
+title: MySQL
+categories: database
+...
+
+## Apa itu MySQL
+MySQL adalah relational database management system yang sangat populer. Awalnya MySQL ini adalah milik perusahaan Swedia yang bernama MySQL AB yang berdiri tahun 1995. Pada tahun 2010, MySQL diakuisisi oleh Oracle.
+
+## Download MySQL
+MySQL binary file dapat didownload di [http://dev.mysql.com/downloads/mysql/](http://dev.mysql.com/downloads/mysql/)
+
+## Installing MySQL
+MySQL biasanya sudah include dalam repository distro linux yang Anda gunakan. Untuk debian based linux, gunakan perintah:
+
+```sh
+$ sudo apt-get install mysql-server
+```
+
+## Dump Database
+MySQL dapat melakukan dump dengan perintah:
+
+```sh
+$ mysqldump -uroot -p [nama_db_yang_mau_dibackup] > outputfile.sql
+```
+
+Dump pada MySQL dapat dibuat supaya compatible dengan RDBMS lain, PostgreSQL misalnya, dengan menambahkan parameter ```--compatible``` pada perintah dumpnya.
+```sh
+$ mysqldump -uroot -p --compatible=postgresql [nama_db_yang_mau_dibackup] > outputfile.sql
+```
+
+## Restore Database
+Restore database dapat dilakukan dengan menggunakan perintah:
+
+```sh
+$ mysql -uroot -p [nama_db_yang_mau_dibackup] < file.sql
+```
