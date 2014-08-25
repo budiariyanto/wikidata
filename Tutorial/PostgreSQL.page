@@ -32,7 +32,7 @@ $ sudo su postgres
 1. Jalankan perintah ```psql``` untuk menjalankan postgresql client.
 1. Jalankan perintah:
 ```sql
-CREATE USER geek SUPERUSER
+CREATE USER geek SUPERUSER PASSWORD '12345'
 ```
 
 Setelah membuat user geek, maka dengan login menggunakan user geek pada saat awal login di komputer kita, jika ingin mengoperasikan postgresql tidak perlu switch user dulu ke user postgres. Ini jauh lebih nyaman. :)
