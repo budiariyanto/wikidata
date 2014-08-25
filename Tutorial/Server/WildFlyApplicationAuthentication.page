@@ -1,0 +1,85 @@
+---
+title: WildFly Application Authentication
+categories: server
+...
+
+## Konfigurasi Realm
+```xml
+    <security-domain name="app" cache-type="default">
+      <authentication>
+        <login-module code="Database" flag="required">
+          <module-option name="dsJndiName" value="java:/db_fkcbt"/>
+          <module-option name="principalsQuery" value="select password from authentication where username=?"/>
+          <module-option name="rolesQuery" value="select group_name, 'Roles' from user_group ug inner join authentication a on ug.user_id = a.user_account where a.username = ?"/>
+          <module-option name="hashAlgorithm" value="SHA-256"/>
+          <module-option name="hashEncoding" value="hex"/>
+          <module-option name="unauthenticatedIdentity" value="guest"/>
+        </login-module>
+        <login-module code="RoleMapping" flag="required">
+          <module-option name="rolesProperties" value="file:${jboss.server.config.dir}/app.properties"/>
+          <module-option name="replaceRole" value="false"/>
+        </login-module>
+      </authentication>
+    </security-domain>
+```
+
+The role-group mapping you have in the file WEB-INF/glassfish-web.xml should be migrated to the file app.properties, where app is the name of the security domain, as defined above. Save this file in the folder WILDFLY_HOME/standalone/configuration or WILDFLY_HOME/domain/configuration to be taken into account.
+
+The following glassfish-web.xml content:
+
+```xml
+<security-role-mapping>
+        <role-name>admin</role-name>
+        <group-name>admins</group-name>
+    </security-role-mapping>
+    <security-role-mapping>
+        <role-name>leader</role-name>
+        <group-name>leaders</group-name>
+        <group-name>admins</group-name>
+    </security-role-mapping>
+    <security-role-mapping>
+        <role-name>helper</role-name>
+        <group-name>helpers</group-name>
+        <group-name>leaders</group-name>
+        <group-name>admins</group-name>
+    </security-role-mapping>
+    <security-role-mapping>
+        <role-name>member</role-name>
+        <group-name>members</group-name>
+        <group-name>helpers</group-name>
+        <group-name>leaders</group-name>
+        <group-name>admins</group-name>
+    </security-role-mapping>
+    <security-role-mapping>
+        <role-name>partner</role-name>
+        <group-name>partners</group-name>
+        <group-name>leaders</group-name>
+        <group-name>admins</group-name>
+    </security-role-mapping>
+    <security-role-mapping>
+        <role-name>speaker</role-name>
+        <group-name>speakers</group-name>
+    </security-role-mapping>
+```
+
+
+
+is drastically simplified in the app.properties file:
+
+    admins=admin,leader,helper,member,partner
+    leaders=leader,helper,member,partner
+    members=member
+    helpers=helper,member
+    partners=partner
+
+
+
+where groups are listed on the left of the equal operator and roles are listed on the right. In the example above, users in the group admins fulfill the role of admin, leader, helper, member and partner.
+
+To finish the configuration, add the file jboss-web.xml in the folder WEB-INF of your web module with the following content:
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <jboss-web>
+              <security-domain>app</security-domain>
+    </jboss-web>
+
