@@ -1,0 +1,55 @@
+---
+title: WildFly Application Server
+categories: server
+...
+
+## Apa itu WildFly
+WildFly adalah Java EE application server, versi open source dari JBoss EAP(Enterprise Application Platform).
+
+## Download WildFly
+Distribusi WildFly bisa didownload di [http://wildfly.org/downloads/](http://wildfly.org/downloads/). Rekomendasi saya pilih yang formatnya tgz saja karena ukuran filenya lebih kecil.
+
+## Installing WildFly
+Cara menginstall WildFly cukup dengan mengekstraknya saja di direktori yang Anda mau.
+
+## Running WildFly
+### Standalone mode
+Kita dapat menjalankan WildFly pada standalone mode jika kita tidak berada pada clustered environment, konkretnya kita menjalankan aplikasi kita pada 1 mesin server saja.
+
+Cara running WildFly adalah dengan mengeksekusi file ```JBOSS_HOME/bin/standalone.sh```. Ketika running, defaultnya WildFly akan membaca file konfigurasi dari ```JBOSS_HOME/standalone/configuration/standalone.xml```. Jika ingin running dengan konfigurasi full profile, cara runningnya adalah dengan menjalankan perintah ```JBOSS_HOME/bin/standalone.sh -c standalone-full.xml```. Perbedaan file konfigurasi ```standalone.xml``` dengan ```standalone-full.xml``` adalah fitur untuk messaging(jms). File konfigurasi ```standalone-full.xml``` akan meload fitur untuk messaging.
+
+### Domain mode
+Jika kita 
+
+## Konfigurasi JDBC Driver
+JDBC driver dapat dikonfigurasi dengan 2 cara. Yang pertama adalah menaruh file ```.jar```nya ke dalam direktori ```JBOSS_HOME/standalone/deployments```. Ketika application server dilaunch, otomatis JDBC driver akan terload dan siap dipakai ketika kita ingin membuat datasource.
+
+Cara yang kedua adalah dengan mengkonfigurasi JDBC driver sebagai module. Caranya adalah:
+1. Copy file ```.jar``` driver ke ```JBOSS_HOME/modules/system/layers/base```. Misalkan kita menggunakan driver postgresql, berarti kita copykan drivernya ke dalam direktori ```JBOSS_HOME/modules/system/layers/base/org/postgresql/main```.
+2. Pada direktori ```JBOSS_HOME/modules/system/layers/base/org/postgresql/main```, buat file bernama module.xml. Isinya adalah sebagai berikut:
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:jboss:module:1.3" name="org.postgresql">
+    <resources>
+        <resource-root path="postgresql-9.3-1102.jdbc41.jar"/>
+    </resources>
+    <dependencies>
+        <module name="javax.api"/>
+        <module name="javax.transaction.api"/>
+    </dependencies>
+</module>
+```
+3. Tambahkan definisi driver dengan memodifikasi file konfigurasi ```JBOSS_HOME/standalone/configuration/standalone.xml``` atau ```JBOSS_HOME/standalone/configuration/standalone-full.xml``` atau keduanya juga boleh tergantung file konfigurasi mana yang ingin kita pakai saat menjalankan application server. Tambahkan tag xml berikut ini:
+```xml
+<datasources>
+    <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" use-java-context="true">
+     ........
+    <drivers>
+       ........
+       <driver name="postgresql" module="org.postgresql">
+           <driver-class>org.postgresql.Driver</driver-class>
+       </driver>
+    </drivers>
+</datasources>
+```
+4. Restart application server untuk mereload.
