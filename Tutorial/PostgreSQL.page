@@ -50,3 +50,10 @@ Untuk merestore database, gunakan perintah:
 ```bash
 $ psql dbname < infile.sql
 ```
+
+## JDBC Connection URL forms
+Untuk menghubungkan postgresql dengan aplikasi yang kita buat menggunakan driver JDBC, bentuk URL yang valid adalah sebagai berikut:
+
+* jdbc:postgresql:database
+* jdbc:postgresql://host/database
+* jdbc:postgresql://host:port/database
