@@ -18,11 +18,11 @@ Kita dapat menjalankan WildFly pada standalone mode jika kita tidak berada pada 
 
 Cara running WildFly adalah dengan mengeksekusi file ```JBOSS_HOME/bin/standalone.sh```. Ketika running, defaultnya WildFly akan membaca file konfigurasi dari ```JBOSS_HOME/standalone/configuration/standalone.xml```. Jika ingin running dengan konfigurasi full profile, cara runningnya adalah dengan menjalankan perintah ```JBOSS_HOME/bin/standalone.sh -c standalone-full.xml```. Perbedaan file konfigurasi ```standalone.xml``` dengan ```standalone-full.xml``` adalah fitur untuk messaging(jms). File konfigurasi ```standalone-full.xml``` akan meload fitur untuk messaging.
 
-### Domain mode
-Jika kita 
+### Managed Domain mode
+WildFly managed domain mode dapat mengontrol dan mengkonfigurasi multi-instance di banyak mesin server fisik maupun virtual. Konfigurasi default dari mode ini adalah include 1 domain controller dan 1 server group berisi 3 server yang berjalan di localhost. Dari ketiga server, yang otomatis berjalan hanya 2 saja, satunya harus kita jalankan manual.
 
 ## Konfigurasi JDBC Driver
-JDBC driver dapat dikonfigurasi dengan 2 cara. Yang pertama adalah menaruh file ```.jar```nya ke dalam direktori ```JBOSS_HOME/standalone/deployments```. Ketika application server dilaunch, otomatis JDBC driver akan terload dan siap dipakai ketika kita ingin membuat datasource.
+JDBC driver dapat dikonfigurasi dengan 2 cara. Yang pertama adalah menaruh file ```.jar```nya ke dalam direktori ```JBOSS_HOME/standalone/deployments```. Ketika application server dilaunch, otomatis JDBC driver akan terload dan siap dipakai ketika kita ingin membuat datasource. Direkomendasikan menggunakan cara ini.
 
 Cara yang kedua adalah dengan mengkonfigurasi JDBC driver sebagai module. Caranya adalah:
 1. Copy file ```.jar``` driver ke ```JBOSS_HOME/modules/system/layers/base```. Misalkan kita menggunakan driver postgresql, berarti kita copykan drivernya ke dalam direktori ```JBOSS_HOME/modules/system/layers/base/org/postgresql/main```.
@@ -44,12 +44,13 @@ Cara yang kedua adalah dengan mengkonfigurasi JDBC driver sebagai module. Carany
 <datasources>
     <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" use-java-context="true">
      ........
-    <drivers>
-       ........
-       <driver name="postgresql" module="org.postgresql">
-           <driver-class>org.postgresql.Driver</driver-class>
-       </driver>
-    </drivers>
+        <drivers>
+           ........
+           <driver name="postgresql" module="org.postgresql">
+               <driver-class>org.postgresql.Driver</driver-class>
+           </driver>
+        </drivers>
+    </datasource>
 </datasources>
 ```
 4. Restart application server untuk mereload.
