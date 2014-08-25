@@ -16,8 +16,33 @@ Untuk distro linux debian based, gunakan perintah:
 $ sudo apt-get install postgresql postgresql-contrib
 ```
 
-## Dump Database
+## Setup User / Role
+Default user / role postgresql adalah **postgres**. User postgres mempunyai kewenangan superuser. Jika ingin menggunakan user postgres untuk bekerja sebetulnya tidak masalah, hanya saja akan sedikit lebih repot karena setiap ingin menjalankan postgresql client kita harus login sebagai user postgres terlebih dahulu dengan perintah:
 
+```bash
+$ sudo su postgres
+```
+
+Setelah itu baru kita diijinkan menjalankan perintah ```psql``` untuk menjalankan postgresql client. Untuk itu ada baiknya kita membuat satu lagi role baru untuk user kita sewaktu pertama kali login. Berikut ini langkah-langkahnya:
+
+1. Login sebagai user postgres dengan perintah
+```bash
+$ sudo su postgres
+```
+1. Jalankan perintah ```psql``` untuk menjalankan postgresql client.
+1. Jalankan perintah:
+```sql
+CREATE USER geek SUPERUSER
+```
+
+Setelah membuat user geek, maka dengan login menggunakan user geek pada saat awal login di komputer kita, jika ingin mengoperasikan postgresql tidak perlu switch user dulu ke user postgres. Ini jauh lebih nyaman. :)
+
+## Dump Database
+Untuk dump database, gunakan perintah:
+
+```bash
+$ pg_dump nama_db > output_file
+```
 
 ## Restore Database
 Untuk merestore database, gunakan perintah:
