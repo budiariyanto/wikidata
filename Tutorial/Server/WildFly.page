@@ -59,6 +59,8 @@ Cara yang kedua adalah dengan mengkonfigurasi JDBC driver sebagai module. Carany
 1. Restart application server untuk mereload.
 
 ## Object Relational Mapping Layer
+Secara default, untuk ORM layer WildFly menggunakan Hibernate. Berikut ini adalah catatan konfigurasi ketika kita ingin menggunakan OpenJPA atau EclipseLink.
+
 ### Menggunakan OpenJPA
 Kita perlu mengcopykan OpenJPA jar ke dalam folder ```modules/system/layers/base/org/apache/openjpa/main```. Setelah itu update file ```modules/system/layers/base/org/apache/openjpa/main/module.xml``` dengan menambahkan definisi OpenJPA jar pada file tersebut.
 
