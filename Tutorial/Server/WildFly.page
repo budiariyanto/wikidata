@@ -57,3 +57,98 @@ Cara yang kedua adalah dengan mengkonfigurasi JDBC driver sebagai module. Carany
 </datasources>
 ```
 1. Restart application server untuk mereload.
+
+## Object Relational Mapping Layer
+### Menggunakan OpenJPA
+Kita perlu mengcopykan OpenJPA jar ke dalam folder ```modules/system/layers/base/org/apache/openjpa/main```. Setelah itu update file ```modules/system/layers/base/org/apache/openjpa/main/module.xml``` dengan menambahkan definisi OpenJPA jar pada file tersebut.
+
+```xml
+<module xmlns="urn:jboss:module:1.1" name="org.apache.openjpa">
+    <resources>
+        <resource-root path="jipijapa-openjpa-1.0.1.Final.jar"/>
+        <resource-root path="openjpa-all.jar"/>
+        <resource-root path="serp.jar"/>
+    </resources>
+ 
+    <dependencies>
+        <module name="javax.api"/>
+        <module name="javax.annotation.api"/>
+        <module name="javax.enterprise.api"/>
+        <module name="javax.persistence.api"/>
+        <module name="javax.transaction.api"/>
+        <module name="javax.validation.api"/>
+        <module name="javax.xml.bind.api"/>
+        <module name="org.apache.commons.collections"/>
+        <module name="org.apache.commons.lang"/>
+        <module name="org.jboss.as.jpa.spi"/>
+        <module name="org.jboss.logging"/>
+        <module name="org.jboss.vfs"/>
+        <module name="org.jboss.jandex"/>
+    </dependencies>
+</module>
+```
+
+### Menggunakan EclipseLink
+Kita perlu mengcopykan eclipselink jar ke dalam folder ```modules/system/layers/base/org/eclipse/persistence/main```. Setelah itu update file ```modules/system/layers/base/org/eclipse/persistence/main/module.xml``` dengan menambahkan definisi eclipselink jar pada file tersebut.
+
+```xml
+<module xmlns="urn:jboss:module:1.1" name="org.eclipse.persistence">
+    <resources>
+        <resource-root path="jipijapa-eclipselink-1.0.1.Final.jar"/>
+        <resource-root path="eclipselink-2.5.2.jar"/>
+    </resources>
+ 
+    <dependencies>
+        <module name="asm.asm"/>
+        <module name="javax.api"/>
+        <module name="javax.annotation.api"/>
+        <module name="javax.enterprise.api"/>
+        <module name="javax.persistence.api"/>
+        <module name="javax.transaction.api"/>
+        <module name="javax.validation.api"/>
+        <module name="javax.xml.bind.api"/>
+        <module name="org.antlr"/>
+        <module name="org.apache.commons.collections"/>
+        <module name="org.dom4j"/>
+        <module name="org.javassist"/>
+        <module name="org.jboss.as.jpa.spi"/>
+        <module name="org.jboss.logging"/>
+        <module name="org.jboss.vfs"/>
+    </dependencies>
+</module>
+```
+
+Supaya WildFly dapat mendeploy aplikasi kita menggunakan eclipselink, kita harus menambahkan definisi JPA provider pada file ```persistence.xml``` di dalam project kita seperti ini:
+
+```xml
+<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+```
+
+Supaya definisi tersebut dapat terbaca oleh WildFly, kita harus menambahkan konfigurasi pada file konfigurasi WildFly, dalam kasus ini saya menggunakan file```standalone-full.xml```. Tambahkan definisi xml berikut ini ke dalamnya:
+
+```xml
+<system-properties>
+   ...
+   <property name="eclipselink.archive.factory" value="org.jipijapa.eclipselink.JBossArchiveFactoryImpl"/>
+</system-properties>
+```
+
+Jika ingin menambahkan dengan menggunakan script dari WildFly, kita bisa menjalankan perintah berikut ini:
+
+```bash
+$ ./jboss-cli.sh --connect '/system-property=eclipselink.archive.factory:add(value=org.jipijapa.eclipselink.JBossArchiveFactoryImpl)'
+```
+
+Panduan lengkap konfigurasi eclipselink menggunakan WildFly bisa dibaca di [sini](https://community.jboss.org/wiki/HowToUseEclipseLinkWithAS7)
+
+Jika kita menggunakan WildFly 8.1.0 dengan EclipseLink 2.5.2, kita akan mendapatkan exception sebagai berikut:
+
+```
+Caused by: java.lang.ClassNotFoundException: javax.ws.rs.ext.ExceptionMapper from [Module "org.eclipse.persistence:main" from local module loader...
+```
+
+Masalah ini dapat diselesaikan dengan menambahkan dependency ke dalam file ```modules/system/layers/base/org/eclipse/persistence/main/module.xml```:
+
+```xml
+<module name="javax.ws.rs.api"/>
+```
