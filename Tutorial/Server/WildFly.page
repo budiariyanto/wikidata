@@ -154,3 +154,50 @@ Masalah ini dapat diselesaikan dengan menambahkan dependency ke dalam file ```mo
 ```xml
 <module name="javax.ws.rs.api"/>
 ```
+
+## Konfigurasi Interface
+Secara default, konfigurasi interface pada WildFly hanya bind localhost(127.0.0.1). Jadi aplikasi web dan web management consolenya hanya bisa diakses lewat komputer lokal. Konfigurasi default diset seperti ini untuk alasan keamanan. Untuk mengkonfigurasi supaya aplikasi web dan web management consolenya dapat diakses dari komputer luar, kita konfigurasi interfacenya terlebih dahulu. Cari tag ```<interfaces>``` pada file konfigurasi yang kita gunakan. Biasanya kita menggunakan ```standalone.xml``` atau ```standalone-full.xml```. Berikut ini contoh konfigurasinya:
+
+```xml
+<interfaces>
+  <interface name="management">
+   <inet-address value="127.0.0.1"/>
+  </interface>
+  <interface name="public">
+   <inet-address value="127.0.0.1"/>
+  </interface>
+</interfaces>
+```
+
+Contoh konfigrasi yang lain:
+```xml
+<interface name="global">
+   <!-- Use the wildcard address -->
+   <any-address/>
+</interface>
+ 
+<interface name="ipv4-global">
+   <!-- Use the IPv4 wildcard address -->
+   <any-ipv4-address/>
+</interface>
+ 
+<interface name="ipv6-global">
+   <!-- Use the IPv6 wildcard address -->
+   <any-ipv6-address/>
+</interface>
+ 
+<interface name="external">
+   <nic name="eth0"/>
+</interface>
+ 
+<interface name="default">
+   <!-- Match any interface/address on the right subnet if it's
+        up, supports multicast and isn't point-to-point -->
+   <subnet-match value="192.168.0.0/16"/>
+   <up/>
+   <multicast/>
+   <not>
+      <point-to-point/>
+   </not>
+</interface>
+```
