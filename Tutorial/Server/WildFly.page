@@ -23,6 +23,13 @@ WildFly managed domain mode dapat mengontrol dan mengkonfigurasi multi-instance 
 
 Untuk selajutnya, WildFly administration console berjalan pada port 9990. Supaya mudah mengaksesnya, WildFly sudah membuatkan landing page di [localhost:8080](http://localhost:8080).
 
+## Stop WildFly Server
+Untuk menshutdown WildFly, masuk ke direktori ```bin``` dari WildFly, lalu kita menjalankan perintah sebagai berikut:
+
+```bash
+$ ./jboss-cli.sh --connect command=:shutdown
+```
+
 ## Konfigurasi JDBC Driver
 JDBC driver dapat dikonfigurasi dengan 2 cara. Yang pertama adalah menaruh file ```.jar```nya ke dalam direktori ```JBOSS_HOME/standalone/deployments```. Ketika application server dilaunch, otomatis JDBC driver akan terload dan siap dipakai ketika kita ingin membuat datasource. Direkomendasikan menggunakan cara ini.
 
