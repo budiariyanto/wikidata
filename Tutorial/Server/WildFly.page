@@ -23,6 +23,14 @@ WildFly managed domain mode dapat mengontrol dan mengkonfigurasi multi-instance 
 
 Untuk selajutnya, WildFly administration console berjalan pada port 9990. Supaya mudah mengaksesnya, WildFly sudah membuatkan landing page di [localhost:8080](http://localhost:8080).
 
+## Explode Deployment
+Kadang-kadang kita ingin aplikasi yang kita deploy diexplode(diekstrak) secara otomatis ketika dideploy. Supaya WildFly mengekstrak aplikasi yang kita deploy, kita harus melakukan konfigurasinya terlebih dahulu. Bukalah file xml konfigurasi WildFly. Misalkan ```standalone-full.xml```. Cari tag xml ```<deployment-scanner>``` dan tambahkan property ```auto-deploy-zipped``` dan ```auto-deploy-exploded``` seperti berikut ini:
+
+```xml
+<deployment-scanner scan-interval="5000" relative-to="jboss.server.base.dir"
+   path="deployments" auto-deploy-zipped="true" auto-deploy-exploded="false"/>
+```
+
 ## Stop WildFly Server
 Untuk menshutdown WildFly, masuk ke direktori ```bin``` dari WildFly, lalu kita menjalankan perintah sebagai berikut:
 
