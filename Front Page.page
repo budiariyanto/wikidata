@@ -4,10 +4,40 @@ format: Markdown
 ...
 
 # Welcome to My Wiki!
+## Summary
+My name is Budi Ariyanto and this is my wiki. This wiki is powered by Gitit. I'm a proud linux user and have been registered on linux counter. This is my profile on linux counter: <i class="fa fa-linux fa-lg"></i> [Registered Linux User #473988](http://linuxcounter.net/user/473988.html)
 
-Saya adalah Budi Ariyanto, penggemar teknologi open source. Ini adalah wiki saya. Wiki ini menggunakan gitit.
+I'm a programmer who interested in open source technology. Java is my main programming language and I'm interested to build enterprise business application.
 
-<i class="fa fa-linux fa-lg"></i> [Registered Linux User #473988](http://linuxcounter.net/user/473988.html)
+## Education
+2005 – 2009 at DUTA WACANA CHTISTIAN UNIVERSITY
+
+* Bachelor of Engineering, Major in Information System with GPA 3.37 out of 4.00
+Thesis : Perbandingan Algoritma Lone Ranger dan Looking for Twins untuk Menyelesaikan Permainan Sudoku
+* Best lecturer's assistant
+* Secretary at Himpunan Mahasiswa Sistem Informasi
+* Achieve an intern scholarship for the students who have good academic record
+* Speaker on the Java Meet Up Seminar with Introduction to Swing Framework as the subject
+
+## Work Experiences
+2009 – present at KRIDA WACANA CHRISTIAN UNIVERSITY, Jakarta
+
+* Application developer and system support
+* Build an application to handle entire academic business process
+* Do some internal program testing
+* Patching and troubleshooting the old running application
+* Train and supervising new employee in IT division
+
+2006 – 2009 at DUTA WACANA CHRISTIAN UNIVERSITY, Yogyakarta
+
+* Lecturer's Assistant
+* Teach the basic knowledge about object oriented programming using Java or C#
+* Teach how to develop a client-server application, web and desktop based using combination of PHP & MySQL or Visual Foxpro & Oracle
+
+## Technical Knowledge
+ * Programming languages : Java, C#, PHP, Visual Fox Pro
+ * Scripting languages : bash, CSS, JavaScript
+ * RDBMS : MySQL, PostgreSQL, SQL Server Strong knowledge about windows and linux operating system
 
 ## You Can Reach Me @
 - <i class="fa fa-envelope"></i> fx.budi.ariyanto@gmail.com
