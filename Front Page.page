@@ -1,11 +1,13 @@
 ---
 title: Welcome!
 format: Markdown
+toc: false
 ...
 
-# Welcome to My Wiki!
+# About Myself
+
 ## Summary
-My name is Budi Ariyanto and this is my wiki. This wiki is powered by Gitit. I'm a proud linux user and have been registered on linux counter. This is my profile on linux counter: <i class="fa fa-linux fa-lg"></i> [Registered Linux User #473988](http://linuxcounter.net/user/473988.html)
+Hi, welcome to my wiki. My name is Budi Ariyanto and this is my wiki. This wiki is powered by Gitit. I'm a proud linux user and have been registered on linux counter. This is my profile on linux counter: <i class="fa fa-linux fa-lg"></i> [Registered Linux User #473988](http://linuxcounter.net/user/473988.html)
 
 I'm a programmer who interested in open source technology. Java is my main programming language and I'm interested to build enterprise business application.
 
@@ -13,7 +15,7 @@ I'm a programmer who interested in open source technology. Java is my main progr
 2005 – 2009 at DUTA WACANA CHTISTIAN UNIVERSITY
 
 * Bachelor of Engineering, Major in Information System with GPA 3.37 out of 4.00
-Thesis : Perbandingan Algoritma Lone Ranger dan Looking for Twins untuk Menyelesaikan Permainan Sudoku
+Thesis : *Perbandingan Algoritma Lone Ranger dan Looking for Twins untuk Menyelesaikan Permainan Sudoku*
 * Best lecturer's assistant
 * Secretary at Himpunan Mahasiswa Sistem Informasi
 * Achieve an intern scholarship for the students who have good academic record
@@ -38,6 +40,37 @@ Thesis : Perbandingan Algoritma Lone Ranger dan Looking for Twins untuk Menyeles
  * Programming languages : Java, C#, PHP, Visual Fox Pro
  * Scripting languages : bash, CSS, JavaScript
  * RDBMS : MySQL, PostgreSQL, SQL Server Strong knowledge about windows and linux operating system
+
+## My Projects
+There are projects I have done in my workplaces, consists of:
+
+### Create EPSBED Report: June 2009 – January 2011
+
+University in Indonesia have to report their activities every semester to Kopertis and DIKTI(Direktorat Jendral Perguruan Tinggi) for university evaluation. This kind of report called Evaluasi Program Studi Berbasis Evaluasi Diri (EPSBED). Datas have to be validated before submitted to Kopertis and approved by Kopertis before they send the data to DIKTI. From the EPSBED report, DIKTI will see if the university permitted to continue to open the faculties.
+
+### EPSBED script helper: January 2011 – February 2011
+
+University in Indonesia have to report their activities every semester to DIKTI(Direktorat Jendral Perguruan Tinggi) for evaluation. This kind of report called Evaluasi Program Studi Berbasis Evaluasi Diri (EPSBED). The activities reported in a specific data format created by DIKTI. This project help translate internal data format to DIKTI's data format, with all the data validation rules checked. So, with this helper script, the effort for inspecting invalid data is slightly minimized and data transferring process is efficient.less
+
+### Supporting and modifying an existing academic administration application: June 2009 – Present
+
+Application for all purposes academic administration, managing student registration until their graduation. Supported for additional government regulations and changes.
+
+### Osce-Skill Lab Exam Application: June 2013
+
+Student exam application focusing on medical fields and activity on medical laboratory.
+
+### Student online registration: April 2013 – May 2013
+
+Application for online new students registration, and integrate it's data to existing administration application.
+
+### Creating scheduled backup system for every projects at Ukrida: April 2012
+
+Creating script for backup purposes on all projects(also in different machine) and important data at Ukrida.
+
+### Application For Computer Based Test: June 2013 – August 2013
+
+Computer Based Test for students, general exam administration and managing exam questions for the respective exam questions writer. This application also has supports for integrated subjects exam, that consists of some individual subject.
 
 ## You Can Reach Me @
 - <i class="fa fa-envelope"></i> fx.budi.ariyanto@gmail.com
