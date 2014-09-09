@@ -7,15 +7,52 @@ format: Markdown
 
 Saya adalah Budi Ariyanto, penggemar teknologi open source. Ini adalah wiki saya. Wiki ini menggunakan gitit.
 
-<i class="fa fa-linux fa-lg"></i> Registered Linux User #473988
+<i class="fa fa-linux fa-lg"></i> [Registered Linux User #473988](http://linuxcounter.net/user/473988.html)
 
 # You Can Reach Me @
 - <i class="fa fa-envelope"></i> fx.budi.ariyanto@gmail.com
-- <i class="fa fa-github fa-lg"></i> [www.github.com/fxbudiariyanto](www.github.com/fxbudiariyanto)
-- <i class="fa fa-linkedin-square fa-lg"></i> [LinkedIn](www.linkedin.com)
-- <i class="fa fa-facebook-square fa-lg"></i> [www.facebook.com/fx.budi.ariyanto](www.facebook.com/fx.budi.ariyanto)
-- <i class="fa fa-twitter fa-lg"></i> [www.twitter.com/fxbudiariyanto](www.twitter.com/fxbudiariyanto)
+- <i class="fa fa-github fa-lg"></i> [www.github.com/budiariyanto](http://www.github.com/budiariyanto)
+- <i class="fa fa-linkedin-square fa-lg"></i> [http://id.linkedin.com/in/budiariyanto](http://id.linkedin.com/in/budiariyanto)
+- <i class="fa fa-facebook-square fa-lg"></i> [www.facebook.com/fx.budi.ariyanto](http://www.facebook.com/fx.budi.ariyanto)
+- <i class="fa fa-twitter fa-lg"></i> [www.twitter.com/fxbudiariyanto](http://www.twitter.com/fxbudiariyanto)
 
 # Send Me A Private Goodies :)
 - <i class="fa fa-key fa-lg"></i> GPG Public Key Digital Signature
-```ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDgrDmGcq8DnJ/tTaoSlLo36RTyzwLl87eQBFqHCKnyV3IXvxoBWBxPuNXgpdJebe6wwHTuHokzhAA1QmQZQ9iJcvA0CtXHjob8/Iornlaefmu3yDMVkNuu7fFS4o+nb+Iyqnq0golrX55GdrXym2364za+WB0siYqDg4717613Nl3q+2Ib0/m44q7RufQycaitoagB97y6754bdYER3oaXt7G8S43ozT7URFowLRbw5wOOTGaH/4IIuE2ZJ5MmvzusRAlszKvFWDLbTwP7vo+ULVNpQ5kvTOMCOtYIZWxZ03yen0JRHM+ik6wn3qu3SRwo9JsJSOMt0qnJmw4lgZYN fx.budi.ariyanto@gmail.com```
+
+```
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v1
+
+mQENBFQOl+8BCAC7Ry0GNshzLhztyrObgOsFrVgWffZm+x5xpXDFCa4SfXcyciEX
+yeEmXu8OQG6m2FJkwc2l9meJt9fN4GQsYLwyHApU3WXmegfUP5k8YFwFmNVztXWk
+UWqBMdkXHCCrdRuhjRZTaUG8fe3Ig63M7WSBMBis+Eo06GKqEOBoKFT7PIwNU3DE
+zIL3VkMeKpF6knCwrKpqg+xzqxm7DGuPYni84iss/Vr9k371+jIUV50XQu8zrVOh
+rhEJ6NGTA7h5Y3/yWpVdb4G4GfSpfDVNOHsDTxc3tZxFUUoGVnJeU/kX8dNxI1/6
+81lvTYrgaFr7J9SxJSAcQHzEV1UNfc8f4J79ABEBAAG0KkJ1ZGkgQXJpeWFudG8g
+PGZ4LmJ1ZGkuYXJpeWFudG9AZ21haWwuY29tPokBOAQTAQIAIgUCVA6X7wIbAwYL
+CQgHAwIGFQgCCQoLBBYCAwECHgECF4AACgkQdWwNQZ+lBZTyaAf/W06iWU2UY55i
+bWrzzMTASkOgwrfdLbfPbI1oSrj2oDt1223+46NzFnMItgP7EqmFgoPDQDW1+awL
+N6u+Ad6aHxHGRdWTuPq5JG+RiwpDB57Z00bKeaxhNpo4WJf4sHV1N+HXUTQ64lql
+4HnyjUViJ8YHSSVtXEcGrtfEd67VHCe5oT0xh3QnLzD+h5eYrSPhO4x7ZDT7KUji
+XBmRAaxbuVb6JLMVNUXarHWohs1eHONK3zXpTZkicrTsZGk0O2pd265u/ue1r3Y7
+ox2jOQFuxeH6IiYesFktjJAOhyGzO20eCgQVLc2CrXTK3ba3eLcCPIRzWQkU8Bc6
+tuIMaZW/XbkBDQRUDpfvAQgA5jNlPtkLLoTvC2qjqZap7dbYK2wZwWCS8HxvMKfd
+2HPfqh+4IQ8V0Ewm3sDuFe1vXeck9iWMwd8pA3WF5glZ3S7r9DoBYUNvbZbXPkep
+3f/F1kXdFkiUmox4Qe5QjZhbfE/W8az+yCOziDbMxVsSeZkcT2w5/HgdVmULdSAL
+HNlFmUiEDW7pxOwV7XpJP+MRycgDQJ0ZDv2MXIJLeTmlxZiQ0ilGMI9ZAfc4XKNP
+y9GHRF6Z6ijLmQjpob+cqubk+8+57RTzF81Fu6bV54YfVfg/FI/Cw4U2AbzKdQ6h
+0WUU42lJgrPDmPMKiId18nWZ/bzmwbcnSg5MNH/Hmxyz0wARAQABiQEfBBgBAgAJ
+BQJUDpfvAhsMAAoJEHVsDUGfpQWUguoIAIwwtOCszGSjeyId5g9+OPNEka96nqyd
+fRDcu/9soIJWSrO8QudNGTnFEFwhO5aq9cXc8pDgOpz0zgcmolgNVf7tM/mbaFhr
+zoD8zYNODU6ikS5ZRwEOR7XdFqnY3GzgN2JkuWeRSVF0ajtOhs6WdvaQRm52uejd
+4566cq1oeT9U4EBW/SzXWSFbcHUIFPzlumdKGqxWyD+cWMa8LqlXiNSQLiznAngU
+Q5wsUpKJZDzyGChB6IIgLYasBqcxYV9Z+aytR5NZx5gbEMBWg5C+rbsSCkkHJQF0
+ytKykAhD3BlFOmqe7QoCiZK1cMO+/g8cmYSmNfrD4rytFJMXnfJBBiY=
+=eCRx
+-----END PGP PUBLIC KEY BLOCK-----
+```
+
+## SSH Public Key
+```
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDgrDmGcq8DnJ/tTaoSlLo36RTyzwLl87eQBFqHCKnyV3IXvxoBWBxPuNXgpdJebe6wwHTuHokzhAA1QmQZQ9iJcvA0CtXHjob8/Iornlaefmu3yDMVkNuu7fFS4o+nb+Iyqnq0golrX55GdrXym2364za+WB0siYqDg4717613Nl3q+2Ib0/m44q7RufQycaitoagB97y6754bdYER3oaXt7G8S43ozT7URFowLRbw5wOOTGaH/4IIuE2ZJ5MmvzusRAlszKvFWDLbTwP7vo+ULVNpQ5kvTOMCOtYIZWxZ03yen0JRHM+ik6wn3qu3SRwo9JsJSOMt0qnJmw4lgZYN fx.budi.ariyanto@gmail.com
+```
