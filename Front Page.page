@@ -55,7 +55,7 @@ University in Indonesia have to report their activities every semester to Kopert
 
 ### EPSBED script helper: January 2011 – February 2011
 
-University in Indonesia have to report their activities every semester to DIKTI(Direktorat Jendral Perguruan Tinggi) for evaluation. This kind of report called Evaluasi Program Studi Berbasis Evaluasi Diri (EPSBED). The activities reported in a specific data format created by DIKTI. This project help translate internal data format to DIKTI's data format, with all the data validation rules checked. So, with this helper script, the effort for inspecting invalid data is slightly minimized and data transferring process is efficient.less
+University in Indonesia have to report their activities every semester to DIKTI(Direktorat Jendral Perguruan Tinggi) for evaluation. This kind of report called Evaluasi Program Studi Berbasis Evaluasi Diri (EPSBED). The activities reported in a specific data format created by DIKTI. This project help translate internal data format to DIKTI's data format, with all the data validation rules checked. So, with this helper script, the effort for inspecting invalid data is slightly minimized and data transferring process is efficient.
 
 ### Supporting and modifying an existing academic administration application: June 2009 – Present
 
