@@ -4,7 +4,7 @@ format: Markdown
 toc: false
 ...
 
-## Summary
+## <i class="fa fa-file-text"></i> Summary
 Hi, welcome to my wiki. My name is Budi Ariyanto and this is my wiki. This wiki is powered by Gitit. I'm a proud linux user and have been registered on linux counter. This is my profile on linux counter: <i class="fa fa-linux fa-lg"></i> [Registered Linux User #473988](http://linuxcounter.net/user/473988.html)
 
 I'm a Software Engineer, Tester, Database Administrator, and Project Manager in an academic-business applications.
@@ -16,7 +16,7 @@ HTML 5, PHP, CSS 3, C#, Java, jQuery, Fox Pro, SQL, linux administration, enterp
 Specialties:
 Create backbone/core system with EJB or Spring Framework
  
-## Education
+## <i class="fa fa-graduation-cap"></i> Education
 2005 – 2009 at DUTA WACANA CHTISTIAN UNIVERSITY
 
 * Bachelor of Engineering, Major in Information System with GPA 3.37 out of 4.00
@@ -26,7 +26,7 @@ Thesis : *Perbandingan Algoritma Lone Ranger dan Looking for Twins untuk Menyele
 * Achieve an intern scholarship for the students who have good academic record
 * Speaker on the Java Meet Up Seminar with Introduction to Swing Framework as the subject
 
-## Work Experiences
+## <i class="fa fa-laptop"></i> Work Experiences
 2009 – present at KRIDA WACANA CHRISTIAN UNIVERSITY, Jakarta
 
 * Application developer and system support
@@ -41,12 +41,12 @@ Thesis : *Perbandingan Algoritma Lone Ranger dan Looking for Twins untuk Menyele
 * Teach the basic knowledge about object oriented programming using Java or C#
 * Teach how to develop a client-server application, web and desktop based using combination of PHP & MySQL or Visual Foxpro & Oracle
 
-## Technical Knowledge
+## <i class="fa fa-gears"></i> Technical Knowledge
  * Programming languages : Java, C#, PHP, Visual Fox Pro
  * Scripting languages : bash, CSS, JavaScript
  * RDBMS : MySQL, PostgreSQL, SQL Server Strong knowledge about windows and linux operating system
 
-## My Projects
+## <i class="fa fa-line-chart"></i> My Projects
 There are projects I have done in my workplaces, consists of:
 
 ### Create EPSBED Report: June 2009 – January 2011
@@ -77,12 +77,12 @@ Creating script for backup purposes on all projects(also in different machine) a
 
 Computer Based Test for students, general exam administration and managing exam questions for the respective exam questions writer. This application also has supports for integrated subjects exam, that consists of some individual subject.
 
-## You Can Reach Me @
+## <i class="fa fa-users"></i> You Can Reach Me @
 - <i class="fa fa-envelope"></i> fx.budi.ariyanto@gmail.com
 - <i class="fa fa-github fa-lg"></i> [github.com/budiariyanto](http://www.github.com/budiariyanto)
 - <i class="fa fa-linkedin-square fa-lg"></i> [id.linkedin.com/in/budiariyanto](http://id.linkedin.com/in/budiariyanto)
 - <i class="fa fa-facebook-square fa-lg"></i> [facebook.com/fx.budi.ariyanto](http://www.facebook.com/fx.budi.ariyanto)
-- <i class="fa fa-twitter fa-lg"></i> [twitter.com/fxbudiariyanto](http://www.twitter.com/fxbudiariyanto)
+- <i class="fa fa-twitter fa-lg"></i> [\@fxbudiariyanto](http://www.twitter.com/fxbudiariyanto)
 
 ## <i class="fa fa-key"></i> GPG Public Key - Send Me Private Goodies :)
 ```
